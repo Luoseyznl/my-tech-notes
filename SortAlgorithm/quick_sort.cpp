@@ -2,11 +2,11 @@
 #include <vector>
 
 // 快速排序：选择枢轴，分区后递归排序
-
+// 分区：将 nums[high] 放到正确索引处 O(n)
 int partition(std::vector<int>& nums, int low, int high) {
     int pivot = nums[high];
 
-    // 将小于 pivot 的元素放到 low~high-1 合适的位置并返回索引
+    // 遍历 [low, high) 将小于 pivot 的元素放到 i=low, i++ 索引处，最后将 i 为 pivotIndex
     int i = low;
     for (int j = low; j < high; ++j) {
         if (nums[j] <= pivot) {
@@ -18,6 +18,7 @@ int partition(std::vector<int>& nums, int low, int high) {
     return i;
 }
 
+// 以 pivotIndex 区间递归，不稳定 O(log n)~O(n)
 void quickSort(std::vector<int>& nums, int low, int high) {
     if (low >= high) return;
 
