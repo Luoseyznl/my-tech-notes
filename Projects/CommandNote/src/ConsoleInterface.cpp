@@ -9,7 +9,7 @@ void ConsoleInterface::run(my::notepad::Notepad& notepad) {
     std::string command, arg;
 
     std::cout << "Welcome to the Simple Notepad!\n";
-    std::cout << "Simple Notepad (commands: new, open <file>, edit <text>, save, saveas <file>, display, exit)\n";
+    std::cout << "Simple Notepad (commands: new, open <file>, edit <text>, save, saveas <file>, display, undo, redo, exit)\n";
 
     while (true) {
         std::cout << "> ";
@@ -62,6 +62,18 @@ void ConsoleInterface::run(my::notepad::Notepad& notepad) {
                     for (size_t i = 0; i < lines.size(); ++i) {
                         std::cout << i + 1 << ": " << lines[i] << '\n';
                     }
+                }
+            } else if (command == "undo") {
+                if (notepad.undo()) {          // 撤销（返回 false：无可撤销内容）
+                    std::cout << "Undo successful.\n";
+                } else {
+                    std::cout << "Nothing to undo.\n";
+                }
+            } else if (command == "redo") {
+                if (notepad.redo()) {          // 重做（返回 false：无可重做内容）
+                    std::cout << "Redo successful.\n";
+                } else {
+                    std::cout << "Nothing to redo.\n";
                 }
             } else if (command == "exit") {
                 if (notepad.isFileModified()) {

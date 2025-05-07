@@ -18,6 +18,7 @@
 
 #include <string>
 #include <vector>
+#include <stack>
 
 // 使用命名空间 my::notepad 组织代码
 namespace my::notepad
@@ -29,6 +30,11 @@ namespace my::notepad
         std::vector<std::string> lines; // 内容
         std::string currentFile;        // 当前文件名
         bool isModified;                // 已修改标志
+        const size_t MAX_HISTORY = 50;  // 最多保存 50 步历史
+
+        std::deque<std::vector<std::string>> undoHistory;   // 撤销队列（提供容量限制和高效的插入/删除操作）
+        std::deque<std::vector<std::string>> redoHistory;   // 重做队列
+        bool isSameAsSavedFile() const;                   // 检查当前内容是否与保存的文件相同
 
     public:
         Notepad();
@@ -40,6 +46,9 @@ namespace my::notepad
         const std::vector<std::string> &getLines() const; // 获取内容
         bool isFileModified() const;                      // 检查是否修改
         std::string getCurrentFile() const;               // 获取文件名
+        
+        bool undo(); // 撤销最近一次 editFile 操作（返回 false：无可撤销内容）
+        bool redo(); // 重做最近一次被撤销的 editFile 操作（返回 false：无可重做内容）
     };
 
 } // namespace my::notepad
