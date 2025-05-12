@@ -1,0 +1,9 @@
+2025-05-11 23:15:33 [INFO] Thread pool initialized with 4 threads
+2025-05-11 23:15:33 [INFO] Submitted download task: http://speedtest.tele2.net/100MB.zip
+2025-05-11 23:15:33 [INFO] Submitted download task: http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+2025-05-11 23:15:33 [INFO] Starting download: http://speedtest.tele2.net/100MB.zip to 100MB.zip
+2025-05-11 23:15:33 [INFO] Submitted download task: http://www.textfiles.com/etext/FICTION/alice30.txt
+2025-05-11 23:15:33 [INFO] Starting download: http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4 to BigBuckBunny.mp4
+2025-05-11 23:15:33 [INFO] Starting download: http://www.textfiles.com/etext/FICTION/alice30.txt to alice.txt
+2025-05-11 23:15:33 [INFO] Download completed: 0.00 MB, Time: 0.00 s, Speed: -nan MB/s, Saved to: BigBuckBunny.mp4
+2025-05-11 23:15:33 [INFO] Download completed: 0.00 MB, Time: 0.00 s, Speed: 0.00 MB/s, Saved to: alice.txt

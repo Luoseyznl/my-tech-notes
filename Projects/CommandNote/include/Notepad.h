@@ -19,6 +19,7 @@
 #include <string>
 #include <vector>
 #include <stack>
+#include <deque>
 
 // 使用命名空间 my::notepad 组织代码
 namespace my::notepad
