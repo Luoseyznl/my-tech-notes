@@ -1,3 +1,0 @@
-/home/u24/CommandNote/build/CMakeFiles/notepad.dir
-/home/u24/CommandNote/build/CMakeFiles/edit_cache.dir
-/home/u24/CommandNote/build/CMakeFiles/rebuild_cache.dir

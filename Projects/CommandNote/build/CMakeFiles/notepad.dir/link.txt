@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/notepad.dir/src/Notepad.cpp.o CMakeFiles/notepad.dir/src/ConsoleInterface.cpp.o CMakeFiles/notepad.dir/src/main.cpp.o -o notepad 
